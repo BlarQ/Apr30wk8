@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+
+    <Style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1{
+            font-size: 3rem;
+            font-weight: 700;
+            color: black;
+            text-align: center;
+        }
+
+        input{
+            font-size: 2rem;
+            font-weight: 700;
+            color: black;
+            text-align: center;
+        }
+
+        p{
+            font-size: 2rem;
+            font-weight: 700;
+            color: red;
+            text-align: center;
+            margin-top: 10rem;
+        }
+    </Style>
+</head>
+<body>
+    <h1>PALINDROME CHECKER</h1>
+    <input type="text" name="pal" id="pal">
+
+    <p></p>
+</body>
+
+<script>
+    const input = document.querySelector('input')
+    const para = document.querySelector('p')
+
+
+    const Palindrome = () => {
+        const str = (input.value).toLowerCase()
+        str.match(/[a-z0-9]/g).join('') == str.match(/[a-z0-9]/g).reverse().join('') ? para.textContent = `${str} is a Palindrome`.toUpperCase() : para.textContent = `${str} is not a Palindrome`.toUpperCase()
+    }
+
+    addEventListener('input', Palindrome)
+</script>
+</html>

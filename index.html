@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>REGEX</title>
 </head>
 <body>
-    
+    <input type="text" name="def" id="def">
+
+    <button>Check Score</button>
+
+    <p></p>
 </body>
+
+    <script>
+        const greet = 'he said hello world'
+        const greetRegex = /hello/
+
+        //matching more than one
+        const def = 'In 1960, computer is an electronic device that store and process data into information'
+        const defRegex = /electronic|device|process|input|output|data|information/g
+
+
+        const input = document.getElementById('def')
+        const para = document.querySelector('p')
+
+        const result = () => {
+            const str = input.value
+
+            let output
+            
+            str.match(defRegex).length >= output ? "You scored 100%" : output = `You scored ${str.match(defRegex).length * 20}%`
+
+            para.textContent = output
+        }
+
+        document.querySelector('button').addEventListener('click', result)
+
+        //class match      
+        const vowelRegex = /[aeiou]/g
+
+        const allReg = /[a-z0-9]/gi
+
+        const wildRegex = /\w/g  //wildcard for letters
+
+        const wildRegex1 = /\w+/g  //wildcard for words
+
+        const wildRegex2 = /\W+/g  //wildcard for spaces, comma and other symbols
+
+        const wildRegex3 = /\d+/g  //wildcard for numbers
+        
+        const wildRegex4 = /\D/g  //wildcard for non-numbers
+
+        const wildRegex5 = /\s/g  //wildcard for spaces
+
+        const wildRegex6 = /\S/g  //wildcard for non-spaces
+    
+        console.log(def.match(wildRegex6))
+    </script>
 </html>
