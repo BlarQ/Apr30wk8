@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Object Assignment</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Question 1: Create an object representing a car with properties like make, model, and year. Add a method to the car object that displays information about the car.Create two instances of the car object and call the method on each.
+
+    const car = {
+        make: 'Toyota',
+        model: 'Corolla',
+        year: 2020,
+        display: function(){
+            console.log(`The car is a ${this.make} ${this.model} from ${this.year}`)
+        }
+    }
+    car.display()
+    
+    // Question 2: Create an object representing a student with properties name, age, and grades (an array of numbers). Add a method to the student object that calculates and returns the average grade. Create two instances of the student object with different grades and display their average grades.
+
+    const student = {
+        name: 'Damola',
+        age: 22,
+        grades: [100, 90, 80, 70, 60],
+        average: function(){
+            let sum = 0
+            for(let i = 0; i < this.grades.length; i++){
+                sum += this.grades[i]
+            }
+            return sum / this.grades.length
+        },
+        
+    }
+
+    const student2 = {
+        name: 'Collins',
+        age: 24,
+        grades: [60, 45, 68, 77, 60],
+        average: function(){
+            let sum = 0
+            for(let i = 0; i < this.grades.length; i++){
+                sum += this.grades[i]
+            }
+            return sum / this.grades.length
+        }
+    }
+    console.log(`Damola's average: ${student.average()}`)
+    console.log(`Collins' average: ${student2.average()}`)
+    
+    
+    // QUestion 3: Add a publishYear property to the book and set it to the current year. Toggle the value of the isAvailable property. Display the updated information about the book.
+    
+    // Given the following object:
+    const book = {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        pages: 200,
+        isAvailable: true,
+    }
+    const currentYear = new Date().getFullYear()
+    book.publishYear = currentYear
+    book.isAvailable =!book.isAvailable
+    console.log(book)
+
+
+</script>
+</html>
